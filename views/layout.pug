@@ -1,0 +1,64 @@
+block variables
+doctype html 
+html 
+  head
+    meta(charset="utf-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title #{title} | Nomad
+    block scripts 
+      link(rel="stylesheet", type="text/css", href="/styles.css")
+      script(src="/script.js")
+  body
+    header#header
+      div#logo-header
+        img.logo(src="/images/Logo.svg", alt="nomad")
+      div#nav-bar
+        button.menu-toggle(type="button") ☰
+        ul.nav-items
+          li.nav-item: a(href="/") Home
+          li.nav-item: a(href="/#about-section") About
+          li.nav-item: a(href="/#discover-section" id="btn-explore") Destinations
+          li.nav-item: a(href="/allcountries") Explore
+          li.nav-item: a(href="/#footer") Contact
+      form(action="/search", method="POST").flex
+        input#search(type="text", name="country", placeholder="Search by country...")
+        button.btn-search(type="submit") Search
+    main#main 
+      block main-content 
+    footer#footer
+      hr#divider
+      div#row-one
+        div#logo-footer
+          img.logo(src="/images/Logo.svg", alt="nomad")
+          p Contact me
+          div.email-container
+            img(src="/images/email.png" alt="email").email-image
+            p.email irina.cowork@gmail.com
+        div.nav-one 
+          h4 Company
+          ul.nav-one-items
+            li.nav-item: a(href="/") Home
+            li.nav-item: a(href="/#about-section") About
+            li.nav-item: a(href="/") Career
+            li.nav-item: a(href="/") Privacy Policy
+            li.nav-item: a(href="/") Terms and Conditions
+        div.nav-two 
+          h4 Destinations
+          ul.nav-two-items
+            li.nav-item: a(href="/allcountries") All Countries
+            li.nav-item: a(href="/?region=Africa#discover-section") Africa
+            li.nav-item: a(href="/?region=Asia#discover-section") Asia
+            li.nav-item: a(href="/?region=Europe#discover-section") Europe
+            li.nav-item: a(href="/?region=Americas#discover-section") Americas
+            li.nav-item: a(href="/?region=Oceania#discover-section") Oceania
+        div.socials-container
+            h4 Let's get social
+            div.socials
+              a(href="/")
+                img.tw(src="/images/tw.svg", alt="follow us on twitter")
+              a(href="/")
+                img.insta(src="/images/insta.png", alt="follow us on instagram")
+              a(href="/")
+                img.fb(src="/images/fb.png", alt="follow us on facebook")
+      div#row-two
+        div.rights &copy; Nomad 2024. All rights reserved.

@@ -1,0 +1,14 @@
+extends layout
+
+block main-content
+    section#allcountries-section
+        h1 Choose your desired destination
+        p Traveling to rest, explore, or simply celebrate? You're lucky! You have the whole world waiting for you!
+        form(action="/search", method="POST").flex.hidden
+            input#search(type="text", name="country", placeholder="Search...")
+            button.btn-search(type="submit") Search
+        div.countries-list
+            each country in allCountries
+                div.country-content
+                    img(src=country.flags.svg, alt=country.flags.alt).flags
+                    a(href=`/country/${country.name.common}`).country-name #{country.name.common}

@@ -1,0 +1,49 @@
+extends layout 
+
+block main-content
+  section#main-section
+    div.main
+      h1.page-title Embark on a journey of a lifetime
+      p Your adventure begins here. Nature has already called you!
+      div.container 
+        a(href="#discover-section").btn-explore Explore
+    img.homepage-image(src="./images/photo-1504096349903-8ef500040469.png", alt="view on the mountains and the ocean")
+  include about.pug
+  section#discover-section
+    h2 Discover popular destionations
+    //- p Here are lots of interesting destinations to visit, but don't be confused - they're already grouped by category.
+    ul.tabs
+      li: a(href="/#discover-section") Popular
+      li: a(href="?region=Africa#discover-section") Africa
+      li: a(href="?region=Asia#discover-section") Asia
+      li: a(href="?region=Europe#discover-section") Europe
+      li: a(href="?region=Americas#discover-section") Americas
+      li: a(href="?region=Oceania#discover-section") Oceania
+    div.tabcontent
+      if region
+        h3 Countries in #{region}
+        div.countries-list
+          each country in countriesByRegion
+            div.country-content
+              //- img(src=photo.urls.regular, alt=photo.alt_description)
+              img(src=country.flags.svg, alt=country.flags.alt).flags
+              a(href=`/country/${country.name.common}`).country-name #{country.name.common}         
+      else
+        h3 Popular countries today
+        div.countries-list
+          div#italy.country-content
+            a(href="/country/Italy").country-name Italy
+          div#indonesia.country-content
+            a(href="/country/Indonesia").country-name Indonesia
+          div#mexico.country-content
+            a(href="/country/Mexico").country-name Mexico
+    div.allcountries
+      div.allcountries-text
+        h3 Check out the list of all countries
+        p These tourist destinations offer an unrivaled blend of natural beauty and cultural richness.
+        a(href="/allcountries").btn-see-all See all
+      div.bag
+        img(src="./images/bag.png", alt="red bag with travel attributes").bag-image
+
+
+

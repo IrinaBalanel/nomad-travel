@@ -1,0 +1,47 @@
+extends layout 
+
+block main-content
+  section.country-section
+    div.flex
+      div.name-container
+        h1 #{country.name.common}
+        img(src=country.flags.svg, alt=country.flags.alt).flags
+      div 
+        a(href="/allcountries") Explore all countries &gt;&gt;
+    h2 Good to know before going to #{country.name.common}
+    div.info-container
+      div.facts-container
+        p Offical name is #{country.name.official}
+        p Located in #{country.subregion} (#{country.region})
+        p Capital is #{country.capital}
+        p Population is around #{country.population} people
+        //- p Timezones: #{country.timezones[0]}
+        if country.timezones.length <= 5
+          p Timezones: #{country.timezones.join(', ')}
+        else
+          p Timezones:
+          ul.timezones
+            each timezone in country.timezones
+              li #{timezone}
+        div.btn-maps-contanier
+          a(href=`${country.maps.googleMaps}`).btn-maps Go to Google Maps
+      div.country-image-container
+        img(src=photo.urls.raw+"&h=950&dpr=2", alt=photo.alt_description).country-image
+  section.video
+    div.video-text
+      h2 Get inspired with travel guides
+    .carousel-container
+      button.carousel-control-prev(type="button", onclick="prevSlide()") ❮
+      .carousel
+        .carousel-inner
+          each video, index in videos
+            .carousel-item(class=(index === 0 ? 'active' : ''))
+              .video-container
+                h3 #{video.snippet.title}
+                iframe(id="player", type="text/html", width="840", height="590", src=`http://www.youtube.com/embed/${video.id.videoId}`, frameborder="0")
+      button.carousel-control-next(type="button", onclick="nextSlide()") ❯
+            
+
+  
+  
+

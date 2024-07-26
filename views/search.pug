@@ -1,0 +1,12 @@
+extends layout
+block main-content
+    section.search-section
+        h1 Search Result
+        div.countries-list
+            if countries.length
+                each country in countries
+                    div.country-content
+                        img(src=country.flags.svg, alt=country.flags.alt).flags
+                        a(href=`/country/${country.name.common}`).country-name #{country.name.common}
+            else
+                p No results found for "#{req.body.country}"
