@@ -35,7 +35,7 @@ async function getCountryByName(countryName){
         const data = await response.json();
         return data;
     } catch(error){
-        console.log("Error fetching country by name ${countryName}:", error)
+        console.log(`Error fetching country by name ${countryName}:`, error)
     }
 
 }
