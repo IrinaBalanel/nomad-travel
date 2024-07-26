@@ -38,7 +38,7 @@ block main-content
             .carousel-item(class=(index === 0 ? 'active' : ''))
               .video-container
                 h3 #{video.snippet.title}
-                iframe(id="player", type="text/html", width="840", height="590", src=`http://www.youtube.com/embed/${video.id.videoId}`, frameborder="0")
+                iframe(id="player", type="text/html", width="840", height="590", src=`http://www.youtube.com/embed/${video.id.videoId}?origin=https://nomad-travel.onrender.com`, frameborder="0")
       button.carousel-control-next(type="button", onclick="nextSlide()") ❯
             
 
