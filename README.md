@@ -25,4 +25,4 @@ This is a travel planning website built with Node.js and Express, using Pug for 
 5. Start the server with `npm run dev`
 
 ## User Interface
-<img href="nomad.png" width="600px"/>
+<img href="./nomad.png" width="600px"/>
