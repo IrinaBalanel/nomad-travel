@@ -37,6 +37,6 @@ function prevSlide() {
 }
 
 // Auto-play
-setInterval(() => {
-  nextSlide();
-}, 5000);
+// setInterval(() => {
+//   nextSlide();
+// }, 5000);

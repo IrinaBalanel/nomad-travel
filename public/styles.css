@@ -662,6 +662,19 @@ h4{
     margin-top: 0;
 }
 
+.indicator{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot{
+    background-color: #211c4c;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+}
+
 /* Media Queries*/
 @media(max-width: 1580px){
     .country-image-container{
