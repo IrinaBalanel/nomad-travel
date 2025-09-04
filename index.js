@@ -9,8 +9,7 @@ const youtube = require("./modules/youtube/api");
 const photos = require("./modules/photos/api");
 
 const app = express();
-const port = process.env.PORT || "8000";
-
+const port = process.env.PORT || "8001";
 
 //set up application template engine
 app.set("views", path.join(__dirname, "views")); //the first "views" is the setting name
