@@ -25,7 +25,10 @@ This is a travel planning website built with Node.js and Express, using Pug for 
 5. Start the server with `npm run dev`
 
 ## Demo
-[Nomad Travel](https://nomad-travel.onrender.com)
+[Nomad Travel](https://nomad-travel.irinabalanel.com)
+
+## More projects
+Explore more of my work on my portfolio: [irinabalanel.com](https://irinabalanel.com)
 
 ## User Interface
 <img src="nomad.png" width="600px"/>
