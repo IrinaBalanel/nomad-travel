@@ -1,0 +1,18 @@
+services:
+  nomad_travel:
+    image: ${IMAGE:-registry.gitlab.andrewbalanel.com/ib/nomad-travel:latest}
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      PORT: 8001
+      YOUTUBE_API_KEY: ${YOUTUBE_API_KEY:-}
+      UNSPLASH_API_KEY: ${UNSPLASH_API_KEY:-}
+    ports:
+      - "${APP_PORT:-8001}:8001"
+    networks:
+      - nomad_travel
+
+networks:
+  nomad_travel:
+    name: nomad_travel
